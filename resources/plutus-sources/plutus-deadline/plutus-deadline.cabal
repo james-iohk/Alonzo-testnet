@@ -1,12 +1,13 @@
 cabal-version: 2.4
 
-name:                   plutus-helloworld
+name:                   plutus-deadline
 version:                1.27.0
 description:            End to end examples of creating and executing Plutus scripts.
 author:                 IOHK
 maintainer:             operations@iohk.io
 license:                Apache-2.0
 license-files:          LICENSE
+                        NOTICE
 build-type:             Simple
 extra-source-files:     README.md
 
@@ -44,12 +45,13 @@ library
 
   hs-source-dirs:       src
 
-  exposed-modules:      Cardano.PlutusExample.HelloWorld
-                      , Cardano.PlutusExample.HelloWorld5a
-                      , Cardano.PlutusExample.HelloWorldByteStringParametric
+  exposed-modules:      Cardano.PlutusExample.Deadline
+                      , Cardano.PlutusExample.DeadlineRedeemer
 
   build-depends:        bytestring
                       , cardano-api
+                      , flat
+                      , plutus-core
                       , plutus-ledger
                       , plutus-ledger-api
                       , plutus-tx
@@ -58,45 +60,33 @@ library
 
   ghc-options: -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
 
-executable plutus-helloworld
+executable plutus-deadline
   import:               base, project-config
   hs-source-dirs:       app
-  main-is:              plutus-helloworld.hs
+  main-is:              plutus-deadline.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
   build-depends:        cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-deadline
                       , plutus-ledger
-                      , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
 
-executable plutus-helloworld5a
+executable plutus-deadline-redeemer
   import:               base, project-config
   hs-source-dirs:       app
-  main-is:              plutus-helloworld5a.hs
+  main-is:              plutus-deadline-redeemer.hs
   ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
   build-depends:        cardano-api
                       , cardano-ledger-alonzo
+                      , plutus-deadline
                       , plutus-ledger
-                      , plutus-helloworld
                       , plutus-ledger-api
                       , bytestring
 
 
-executable plutus-helloworld-bytestring
-  import:               base, project-config
-  hs-source-dirs:       app
-  main-is:              plutus-helloworld-bytestring.hs
-  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
 
-  build-depends:        aeson
-                      , cardano-api
-                      , cardano-ledger-alonzo
-                      , plutus-helloworld
-                      , plutus-ledger-api
-                      , plutus-tx
-                      , bytestring
 
 

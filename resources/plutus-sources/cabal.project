@@ -5,6 +5,7 @@ packages:
     plutus-helloworld
     plutus-alwayssucceeds
     plutus-alwaysfails
+    plutus-deadline
 
 
 package cryptonite
@@ -22,7 +23,7 @@ test-show-details: direct
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-node
-  tag: cb11587d767af2cb6762fe65ea5f8d8898b09320
+  tag: c6cb9547641eaf548892632f0918bb0bc9bb1bba
   subdir:
     cardano-api
 
@@ -34,7 +35,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-base
-  tag: 8c732560b201b5da8e3bdf175c6eda73a32d64bc
+  tag: cb0f19c85e5bb5299839ad4ed66af6fa61322cc4
   subdir:
     base-deriving-via
     binary
@@ -55,7 +56,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-ledger-specs
-  tag: 30eca73a2f5c13f1fbed9a98a59540ac3d0c8afe
+  tag: 12a0ef69d64a55e737fbf4e846bd8ed9fb30a956
   subdir:
     alonzo/impl
     byron/chain/executable-spec
@@ -108,7 +109,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/ouroboros-network
-  tag: e9cda57df7ea6969edbc3bfc4e117668277d09c8
+  tag: f149c1c1e4e4bb5bab51fa055e9e3a7084ddc30e
   subdir:
     io-sim
     io-classes
@@ -127,7 +128,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/plutus
-  tag: 826c2514a40e962c2e4d56ce912803a434cc28fe
+  tag: 2c8161ad142f56b14611cc0f66b0a2803016fe37
   subdir:
     plutus-core
     plutus-ledger
